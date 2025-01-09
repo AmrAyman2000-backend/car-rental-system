@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "15bba8be-f235-4082-9d25-66010d4fedf3",
+		"name": "Car Rental API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27284682",
+		"_collection_link": "https://orange-station-682997.postman.co/workspace/New-Team-Workspace~bff6571d-23a7-45c6-ac1f-c451f92e1651/collection/27284682-15bba8be-f235-4082-9d25-66010d4fedf3?action=share&source=collection_link&creator=27284682"
+	},
+	"item": [
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars?availability_status=available",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars"
+							],
+							"query": [
+								{
+									"key": "availability_status",
+									"value": "available"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2NDIxNTA1LCJleHAiOjE3MzY0MjUxMDUsIm5iZiI6MTczNjQyMTUwNSwianRpIjoiQ0h5T3NGQmRhbHZWNDZFSyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.8PKbZM3m1uTg2ST3ezcmpb9Prn1zqxq9RK_0DWCuzGk"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2Mzc0NzAyLCJleHAiOjE3MzYzNzgzMDIsIm5iZiI6MTczNjM3NDcwMiwianRpIjoieHRhTEhyNzhacE1pb0xkSSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GSawRwCHwgrYYPeCKFj9ABHMAfK-3n4aTyc5bGJ27JI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tesla Model X",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Electric",
+									"type": "text"
+								},
+								{
+									"key": "price_per_day",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "availability_status",
+									"value": "unavailable",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/dell/Desktop/teacher_img.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/cars"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2NDIwNTc4LCJleHAiOjE3MzY0MjQxNzgsIm5iZiI6MTczNjQyMDU3OCwianRpIjoiaGZYUGpuWWJzWlk2NjRNUCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ar9msT4yUeQIauLWunGxx3AHaBZfN2WQgrKSnvEXA7s"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/cars/9/maintenance"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2NDEyMTYxLCJleHAiOjE3MzY0MTU3NjEsIm5iZiI6MTczNjQxMjE2MSwianRpIjoiZWw0Q2p3dEdMY1hyZ0ppeSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.YkmPuZUSyW0dWNs-693vZU_2nWco37J69s67GvUEQW4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-01-20",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-01-25",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/orders/2/pay"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2NDIwNTc4LCJleHAiOjE3MzY0MjQxNzgsIm5iZiI6MTczNjQyMDU3OCwianRpIjoiaGZYUGpuWWJzWlk2NjRNUCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ar9msT4yUeQIauLWunGxx3AHaBZfN2WQgrKSnvEXA7s"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/orders"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2Mzc0NzAyLCJleHAiOjE3MzYzNzgzMDIsIm5iZiI6MTczNjM3NDcwMiwianRpIjoieHRhTEhyNzhacE1pb0xkSSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GSawRwCHwgrYYPeCKFj9ABHMAfK-3n4aTyc5bGJ27JI"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM2Mzc0NzAyLCJleHAiOjE3MzYzNzgzMDIsIm5iZiI6MTczNjM3NDcwMiwianRpIjoieHRhTEhyNzhacE1pb0xkSSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GSawRwCHwgrYYPeCKFj9ABHMAfK-3n4aTyc5bGJ27JI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
